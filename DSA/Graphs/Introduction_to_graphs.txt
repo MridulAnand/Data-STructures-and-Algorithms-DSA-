@@ -1,0 +1,136 @@
+What is a Graph?
+
+1. Graph is an example of Non Linear Data Structure
+2. A Graph is a collection of nodes connected through edges
+
+    ____
+  2      3
+ /       |
+1________4 Nodes/Vertices
+   Edges
+
+Formal definition of a Graph
+
+1. A graph G = (V,E) is a collection of vertices and edges connecting these vertices
+2. Used to model paths in a city, social networks, website backlinks, internal employee
+ network, etc
+3. A vertex or node is one fundamental unit/entity of which graphs are formed
+4. An edge is uniquely defined by its 2 endpoints
+5. Directed Graph - One way connection 
+6. Undirected Edge - Two way connection 
+7. Directed Graph - All directed edges
+8. Undirected Graph - All undirected edges
+
+Indegree & Outdegree of a node
+
+1. Indegree = No. of edges going out of the nodes
+2. Outdegree = No. of edges coming into the nodes
+
+Example of graph usage
+
+1. Facebook uses it for graph of users
+2. Also used in web crawling for a website or for the entire world wide web
+3. City routing
+
+Ways to represent graph
+
+1. Adjacency list - Mark the nodes with the list of its neighbors
+2. Adjacency matrix - A(ij) = 1 for an edge between i and j, 0 otherwise!
+3. Edge set - Store the pair of nodes/vertices connected with an edge. Example - {(0,1),(0,4),(1,4)}
+4. Other implementations to represent a graph also exists. For example Compact list representation, cost adjacency list, cost adjacency matrix etc
+
+Compact list representation - The entire graph is stored in a 1d array
+
+Example for Adjacency list:
+ let undirected graph
+    0
+   / \
+  2___1
+ 
+  1->0->2  (here 0->2 is linked list)
+  0->1->2  (here 1->2 is linked list)    
+  2->0->1  (here 0->1 is linked list)    
+
+For Adjacency matrix
+
+     0  1  2
+   0 0  1  1
+   1 1  0  1
+   2 1  1  0 
+
+1a. Cost adjacency list - Cost is stored along the links (we will store cost of node in linked list along with address of next node)
+2a. Cost adjacency matrix - In this, 1 is replaced by cost of edge if they are connected, 0 otherwise! and if the cost can be 0 then -1 otherise
+
+For Edge set 
+   {(0,1,2)}
+Most prefered and important representations are - Adjacency list and Adjacency matrix
+
+Graph Trversal
+
+1. Graph traversal refers to the process of visiting (checking and/or updating) each vertex(node) in a graph
+2. Sequence of steps known as Graph traversal algorithm can be used to traverse a graph
+3. Two Algorithms of Graph Traversal are:
+    Breadth First Search (BFS) - Queue Data Structure
+    Depth First Search (DFS) - Stack Data Structure
+
+Exploring the vertex (Node)
+
+1. We have already looked into tree traversal algorithms in our section on trees
+2. In a typical Graph Traversal algorithm, we traverse through (or visit) all the nodes of a graph and add it to the collection of visited nodes
+3. Exploring a vertex in a graph means visiting all the connected vertices
+
+Breath First Search (BFS)
+
+In BFS, we start with a node and start exploring its connected nodes. The same process is repeated with all the connecting nodes untill all the nodes are visited
+
+BFS spanning tree: A spanning tree is a subgraph of a connected graph that includes all the vertices and forms a tree (i.e., it has no cycles). When BFS is used to traverse a graph, it can naturally generate a spanning tree by recording the parent-child relationships as nodes are visited.
+Level Order traversal: Level Order Traversal, also known as Breadth-First Search (BFS), is a method to traverse a binary tree level by level. This means that all nodes at the same level are visited before moving on to the next level.
+
+Depth First Search (DFS)
+
+In DFS, we start with a node and start exploring its connected nodes keeping on suspending the exploration of previous nodes
+
+it uses stack (or recursion also but recursion also makes stack so by default here also we are using stack)
+
+Subgraphs
+
+A subgraph of graph G is a graph whose vertices and edges are subsets of the original graph G
+
+Connected and Complete graphs
+
+1. A connected graph is graph that is connected in the sense of a topological space, i.e., there is a path from any point to any other point in the graph. 
+1a. A graph that is not connnected is said to be disconnected
+
+2. A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge
+
+What is Spanning Tree?
+
+1. A subgraph of a graph G is a graph whose vertices and edges are subsets of the original graph G
+2. A connected subgraph "S" of graph G(V,E) is said to be a Spanning tree of graph G iff (if and only if):
+   1. All vertices of G must be present in S
+   2. No. of edges in S should be |V|-1 (where V is number of nodes/vertices)
+   3. No cycles should be there (acyclic)
+3. Total spanning trees are = n^(n-2) where n = number of nodes/vertices
+ 
+   What is Minimum spanning Tree (MST)?
+   
+   1. The cost of the spanning tree is the sum of the weights of all the edges in the tree
+   2. A minimum spanning tree (MST) is the spanning tree with minimum cost
+   3. Other conditions are same as above conditions of spanning tree
+
+Prims Algorithm
+
+1. Prims algorithm use Greedy approach to find the minimum spanning tree
+2. We start withbany node and start creating a MST
+3. In Prims Algorithm we grow the spanning tree from a starting position until n-1 edges are formed (or n nodes are covered)
+
+Krushkal Algorithm
+
+1. Kruskal's Minimum Spanning Tree (MST) algorithm is to connect all the vertices of a graph with the minimum total edge weight while avoiding cycles. This algorithm 
+employs a greedy approach, meaning it makes locally optimal choices at each step to achieve a globally optimal solution.
+2. Algorithm:
+   1. First, it sorts all the edges of the graph by their weights,
+   2. Then starts the iterations of finding the spanning tree.
+   3. At each iteration, the algorithm adds the next lowest-weight edge one by one, such that the edges picked until now does not form a cycle.
+
+

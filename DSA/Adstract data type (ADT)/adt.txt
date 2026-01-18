@@ -1,0 +1,3 @@
+ADT = set of values (minimum requirements) + operations 
+
+Also to calculate location in array is :- base address value + i * size of data type (example 4 or 2 for int)  ,where i is number of index

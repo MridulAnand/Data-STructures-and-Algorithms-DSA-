@@ -1,0 +1,7 @@
+1. Time Complexity - O(n^2), O(log n) etc
+2. Space Complexity - inplace ,or using extra space etc
+3. Stability - stable sort, unstable sort
+4. Internal Sorting - All the data is loaded into memory (main memory)
+   External Sorting - All the data is not loaded into memory (main memory)
+5. Adaptive - Already sorted data takes less time
+6. Recursive/Non Recursive Sorting Algorithm - recursive if it uses recursion
